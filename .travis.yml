@@ -10,5 +10,4 @@ deploy:
   api_key:
     secure: $API_SECURE
   file: _build/svachmic_cv.pdf
-  on:
-    repo: svachmic/CurriculumVitae
+  skip_cleanup: true
