@@ -1,0 +1,70 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{selinput}
+\SelectInputMappings{
+	aacute={á}, ccaron={č}
+}
+\usepackage[czech]{babel}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black 
+}
+\urlstyle{same}
+\definecolor{mygrey}{gray}{.85}
+\definecolor{mygreylink}{gray}{.40}
+\textheight=9.0in
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{0.375in}
+\addtolength{\textwidth}{0.5in}
+\addtolength{\topmargin}{-.375in}
+\addtolength{\textheight}{0.75in}
+
+%----------------------------------------------------------------
+
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+
+\newcommand{\resheading}[1]{{\large {\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}} \\ \rule{\textwidth}{1.2pt} \end{minipage}}}}
+
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+
+\newcommand{\resheader}{
+\begin{tabular*}{1\textwidth}{ c }
+	\centerline{\textbf{\LARGE Michal Švácha}} \\
+	\centerline{\footnotesize \texttt{{Geneva, Switzerland / e-mail / github.com/svachmic}}} \\
+\end{tabular*}
+\\
+\vspace{0.1in}}
+
+%----------------------------------------------------------------
+
+\begin{document}
+
+\resheader
+
+\input{components/education}
+
+\input{components/experience}
+
+\input{components/skills}
+
+\input{components/projects}
+
+\end{document}
