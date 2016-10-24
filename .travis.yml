@@ -12,4 +12,5 @@ deploy:
   file: _build/svachmic_cv.pdf
   skip_cleanup: true
   on:
+    tags: true
     repo: svachmic/CurriculumVitae
