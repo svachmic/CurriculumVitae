@@ -1,14 +1,16 @@
 sudo: required
 dist: trusty
+
 before_install:
 - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-czechslovak
+
 script:
 - mkdir _build
 - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build svachmic_cv.tex
+
 deploy:
   provider: releases
-  api_key:
-    secure: fT3rIWwlgF9tOaH9gRuj6lQzkLEREROMNWS+m0E/NzzC0lKoIIjGSziwGs835j/oy4d34ej7ooxe3n0Gm3ov1U83C2jwz+UH+ER1u9uN5laPCwpAMVcE4DIRR4OagPQtxNM5gVVJO6LCQnvSn/O2Q2C7mHfvTGtRMdaQr0QAqd4j2seyQ/O1+PWZuLCSwgcXUhEijCx1N/CJE4GmxmP6Yp9IwH9E7Y4EJNEVKhI4d9IImpiwalP7qUDUhnUdz1p06M9etSOa8TnjB7uWe5GmOmlaRLW1w9G3j+l1LXV692ks7FfXnE+33tX4tzA0sSO0n/5TVesM4i92aRHb46UN7kEQpXVLv727qln2itREhKHXfvrxA5BIAXPhNvzhBFXmUhBfCBB+5ghQxT08Zraur+IDCZMAhVZwfca/EpPhdbZMKdESNd8SDO3y344V/B5DSSSLurPhttIzWFyu8oqxwsUUzjlKOfTdSAeLFm3OvG5T4sc+e6me2xzMgbrDK+86UumP3+UCgXXS/S5B/dgEDCR5DNnjKv02pRppJXUd2E9GQyYc5oAvLbIAstvLBrkswZUgoQ3qKUnFbiNBE61H7xBYOdjuxBXV2wiEiEkTTq+xGECTjm9bRbTkdVPbMqNOaWSHNby7L+i81WHyfmryOW5sFqa1Xa4YvW+BjgUkogU=
+  api_key: $GITHUB_TOKEN
   file: _build/svachmic_cv.pdf
   skip_cleanup: true
   on:
